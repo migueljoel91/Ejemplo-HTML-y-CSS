@@ -25,15 +25,24 @@
 <body>
     <header class="main-header">
         <nav class="navbar">
-            <div class="logo">Vulkania Heavy</div>
+            <a href="../index.html" class="logo">Vulkania Heavy</a>
             <ul class="nav-links">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="presupuesto.html" class="active">Presupuesto</a></li>
                 <li><a href="contacto.html">Contacto<span class="emoji-contacto">📞</span></a></li>
             </ul>
-            <div class="cart-icon">
-                <span>🛒 Carrito (0)</span>
+            <div class="cart-wrapper">
+                <button type="button" class="cart-icon" id="cart-toggle" aria-expanded="false" aria-controls="cart-panel">
+                    🛒 Carrito (<span class="cart-count">0</span>)
+                </button>
+                <div class="cart-panel" id="cart-panel" hidden>
+                    <h2 class="cart-panel-title">Tu carrito</h2>
+                    <p class="cart-empty">El carrito está vacío.</p>
+                    <ul class="cart-items" hidden></ul>
+                    <p class="cart-total">Total: <span class="cart-total-value">0,00 €</span></p>
+                    <button type="button" class="cart-clear">Vaciar carrito</button>
+                </div>
             </div>
         </nav>
     </header>
@@ -42,15 +51,16 @@
         <section class="formulario-presupuesto">
             <h1>Envíanos tus dudas</h1>
             <p class="nota-requerido"><span class="required">*</span>Campos obligatorios</p>
-            <form name="Formulario" action="#" method="get">
+            <p id="form-exito" class="form-exito" hidden tabindex="-1">Solicitud registrada. Te responderemos lo antes posible.</p>
+            <form id="formulario-presupuesto" name="Formulario" action="#" method="post" enctype="multipart/form-data">
                 <fieldset>
                     <legend>Datos personales</legend>
                     <label for="nombre">Nombre completo<span class="required">*</span></label>
-                    <input type="text" name="nombre" id="nombre" value="" placeholder="Escriba su nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚüÜäëïöÄËÏÖñÑ ]+" title="Por favor, introduce solo letras y espacios." required>  <!-- Permite cualquier letra mayúscula o minúscula del abecedario, todas las vocales con tilde y diéresis, espacios en blanco y además, como mínimo, debe escribir uno o más caracteres (+) -->
+                    <input type="text" name="nombre" id="nombre" value="" placeholder="Escriba su nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚüÜäëïöÄËÏÖñÑ' -]+" title="Introduce letras, espacios, guiones o apóstrofos." required>
                     <label for="email">Correo electrónico<span class="required">*</span></label>
-                    <input type="email" name="email" id="email" placeholder="Escriba su correo" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Introduce un correo electrónico válido (ej. dominio@tu-dominio.com)." required>  <!-- "[a-zA-Z0-9._%+\-]+" exige el nombre de usuario (letras, números y símbolos comunes "._%+-"). El "@" exige la arroba obligatoria. "[a-zA-Z0-9.\-]+" exige el servidor o dominio (ej. gmail). "\." obliga a poner un punto literal. "[a-zA-Z]{2,}" exige la extensión (ej. es, com) con mínimo 2 letras -->
+                    <input type="email" name="email" id="email" placeholder="Escriba su correo" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Introduce un correo electrónico válido (ej. dominio@tu-dominio.com)." required>
                     <label for="telefono">Teléfono<span class="required">*</span></label>
-                    <input type="tel" name="telefono" id="telefono" placeholder="Escriba su número" pattern="[0-9]{9}" title="Por favor, introduce un número de teléfono válido de 9 dígitos (ej. 612345678)" required>
+                    <input type="tel" name="telefono" id="telefono" placeholder="612345678 o +34 612345678" pattern="(\+34[\s-]?)?[0-9]{9}" title="Introduce 9 dígitos, con o sin prefijo +34." required>
                 </fieldset>
 
                 <label for="informacion">Solicite más información<span class="required">*</span></label>
@@ -61,7 +71,7 @@
 
                 <div class="checkbox-privacidad">
                 <input type="checkbox" name="politica-de-privacidad" value="si" id="politica-de-privacidad" required>
-                <label for="politica-de-privacidad">He leído y acepto la Política de Privacidad<span class="required">*</span></label>
+                <label for="politica-de-privacidad">He leído y acepto la <a href="privacidad.html">Política de Privacidad</a><span class="required">*</span></label>
                 </div>
 
                 <div class="botones-formulario">
@@ -92,5 +102,6 @@
             </a>
         </div>
     </footer>
+    <script src="../JS/site.js"></script>
 </body>
 </html>

@@ -23,15 +23,24 @@
 <body>
     <header class="main-header">
         <nav class="navbar">
-            <div class="logo">Vulkania Heavy</div>
+            <a href="../index.html" class="logo">Vulkania Heavy</a>
             <ul class="nav-links">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="productos.html" class="active">Productos</a></li>
                 <li><a href="presupuesto.html">Presupuesto</a></li>
                 <li><a href="contacto.html">Contacto<span class="emoji-contacto">📞</span></a></li>
             </ul>
-            <div class="cart-icon">
-                <span>🛒 Carrito (0)</span>
+            <div class="cart-wrapper">
+                <button type="button" class="cart-icon" id="cart-toggle" aria-expanded="false" aria-controls="cart-panel">
+                    🛒 Carrito (<span class="cart-count">0</span>)
+                </button>
+                <div class="cart-panel" id="cart-panel" hidden>
+                    <h2 class="cart-panel-title">Tu carrito</h2>
+                    <p class="cart-empty">El carrito está vacío.</p>
+                    <ul class="cart-items" hidden></ul>
+                    <p class="cart-total">Total: <span class="cart-total-value">0,00 €</span></p>
+                    <button type="button" class="cart-clear">Vaciar carrito</button>
+                </div>
             </div>
         </nav>
     </header>
@@ -48,7 +57,7 @@
                         <p class="product-description">Estructura de acero de 125x210x115 cm con 4 soportes J-Cups incluidos y barra de dominadas multiagarre. Soporta hasta 450kg.</p>
                         <div class="product-meta">
                             <span class="product-price">549,00 €</span>
-                            <button class="btn-buy">Añadir al carrito</button>
+                            <button class="btn-buy" type="button" data-id="power-rack" data-name="Power Rack Heavy Duty v2" data-price="549">Añadir al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -60,7 +69,7 @@
                         <p class="product-description">Ideal para espacios compactos. Incluye 6 pasadores para discos olímpicos y barras de seguridad ajustables.</p>
                         <div class="product-meta">
                             <span class="product-price">399,00 €</span>
-                            <button class="btn-buy">Añadir al carrito</button>
+                            <button class="btn-buy" type="button" data-id="half-rack" data-name="Half Rack con Almacenamiento" data-price="399">Añadir al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -77,7 +86,7 @@
                         <p class="product-description">Par de mancuernas de caucho vulcanizado con agarre cromado ergonómico y estriado antideslizante. Disponibles desde 5kg hasta 40kg.</p>
                         <div class="product-meta">
                             <span class="product-price">79,90 € <small>(Par 10kg)</small></span>
-                            <button class="btn-buy">Añadir al carrito</button>
+                            <button class="btn-buy" type="button" data-id="mancuernas-hex" data-name="Kit Mancuernas Hexagonales (Azufradas)" data-price="79.90">Añadir al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -88,7 +97,7 @@
                         <p class="product-description">Sustituye 15 pares de mancuernas en un solo bloque. Dial de selección rápido de 2,5 kg a 24 kg por mancuerna.</p>
                         <div class="product-meta">
                             <span class="product-price">289,00 €</span>
-                            <button class="btn-buy">Añadir al carrito</button>
+                            <button class="btn-buy" type="button" data-id="mancuernas-ajustables" data-name="Mancuernas Ajustables Selectivas (Par)" data-price="289">Añadir al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -105,7 +114,7 @@
                         <p class="product-description">6 posiciones de respaldo (de -15° declinado a 90° militar) y 3 posiciones de asiento. Tapizado de alta densidad antidesgarros.</p>
                         <div class="product-meta">
                             <span class="product-price">189,50 €</span>
-                            <button class="btn-buy">Añadir al carrito</button>
+                            <button class="btn-buy" type="button" data-id="banco-ajustable" data-name="Banco Regulable Multiajustable" data-price="189.50">Añadir al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -116,7 +125,7 @@
                         <p class="product-description">Diseñado bajo especificaciones de potencia. Base ultra estable de tres patas para no interferir con los pies del atleta.</p>
                         <div class="product-meta">
                             <span class="product-price">120,00 €</span>
-                            <button class="btn-buy">Añadir al carrito</button>
+                            <button class="btn-buy" type="button" data-id="banco-plano" data-name="Banco Plano de Competición" data-price="120">Añadir al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -144,5 +153,6 @@
             </a>
         </div>
     </footer>
+    <script src="../JS/site.js"></script>
 </body>
 </html>

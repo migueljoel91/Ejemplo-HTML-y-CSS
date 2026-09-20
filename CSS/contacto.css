@@ -69,9 +69,10 @@
 
 /* Estilo al pasar el ratón por encima del correo o teléfono */
 
-.texto a:hover {
+.texto a:hover,
+.texto a:focus-visible {
     color: var(--accent-hover);
-    text-decoration: underline;  /* Añade un sobrayado */ 
+    text-decoration: underline;
 }
 
 /* Visualización en dispositivos móviles */

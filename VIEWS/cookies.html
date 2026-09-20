@@ -25,15 +25,24 @@
 <body>
     <header class="main-header">
         <nav class="navbar">
-            <div class="logo">Vulkania Heavy</div>
+            <a href="../index.html" class="logo">Vulkania Heavy</a>
             <ul class="nav-links">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="presupuesto.html">Presupuesto</a></li>
                 <li><a href="contacto.html">Contacto<span class="emoji-contacto">📞</span></a></li>
             </ul>
-            <div class="cart-icon">
-                <span>🛒 Carrito (0)</span>
+            <div class="cart-wrapper">
+                <button type="button" class="cart-icon" id="cart-toggle" aria-expanded="false" aria-controls="cart-panel">
+                    🛒 Carrito (<span class="cart-count">0</span>)
+                </button>
+                <div class="cart-panel" id="cart-panel" hidden>
+                    <h2 class="cart-panel-title">Tu carrito</h2>
+                    <p class="cart-empty">El carrito está vacío.</p>
+                    <ul class="cart-items" hidden></ul>
+                    <p class="cart-total">Total: <span class="cart-total-value">0,00 €</span></p>
+                    <button type="button" class="cart-clear">Vaciar carrito</button>
+                </div>
             </div>
         </nav>
     </header>
@@ -51,16 +60,17 @@
             <h2>2. Cookies utilizadas en este sitio web</h2>
             <p>Siguiendo las directrices de la Agencia Española de Protección de Datos, procedemos a detallar el uso de cookies que hace esta web:</p>
             
-            <h3>Cookies propias:</h3>
+            <h3>Almacenamiento local:</h3>
             <ul>
-                <li><strong>Cookies de sesión:</strong> Necesarias para garantizar que el sitio funcione correctamente, recordar los productos que añades al carrito de compra y asegurar que la navegación sea fluida y segura.</li>
+                <li><strong>Carrito de compra:</strong> Los productos añadidos se guardan en el almacenamiento local del navegador (localStorage), no en cookies. Sirve para recordar el carrito entre páginas de este sitio.</li>
             </ul>
 
-            <h3>Cookies de terceros:</h3>
+            <h3>Recursos de terceros:</h3>
             <ul>
-                <li><strong>Analytics (Google Analytics):</strong> Almacena cookies para poder elaborar estadísticas sobre el tráfico y volumen de visitas de esta web. Al utilizar este sitio web, estás consintiendo el tratamiento de información acerca de ti por Google.</li>
-                <li><strong>Redes sociales:</strong> Cada red social (Facebook, Instagram) utiliza sus propias cookies para que puedas interactuar con los enlaces a nuestras redes oficiales.</li>
+                <li><strong>Font Awesome (cdnjs):</strong> Se carga para mostrar los iconos de redes sociales. Puede registrar la petición de forma técnica.</li>
+                <li><strong>Unsplash:</strong> La imagen del banner de inicio se sirve desde su CDN.</li>
             </ul>
+            <p>Este sitio no instala Google Analytics ni cookies de seguimiento de Facebook o Instagram. Los enlaces a redes sociales solo abren esas páginas externas.</p>
         </section>
 
         <section class="legal-section">
@@ -100,5 +110,6 @@
             </a>
         </div>
     </footer>
+    <script src="../JS/site.js"></script>
 </body>
 </html>
